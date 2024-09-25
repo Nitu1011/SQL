@@ -1,0 +1,760 @@
+251i
+ssh monitory@10.189.15.251
+
+V3
+ssh fnsonlv3@10.189.15.156
+
+177
+ssh fnsonlid@10.189.14.177
+
+sftp -oport=2321 fnsonld3@10.176.15.51
+
+from old to wd old
+ssh fnsonlwd@10.189.15.157
+Qwert@1
+
+ACC
+38003895372 -07 
+38003875071 -08
+38000020571 -dep  
+38003891377 -savings  
+93231604306 -gl
+
+95084096356  anjuna
+new ccod acc created
+38004222724 
+38004222735 
+38004222736 
+38004222757 
+38004222768 
+38004222779 
+38004222791
+  
+95038526761  abrin
+
+
+38004270530 
+38003874736 ---- savings
+
+http://10.189.15.235:6005/     st region frontend
+
+mkchkoff-----------------to turn off maker checker in every txn
+
+to see file size 
+du -sk *|sort -nr|head
+
+to see file size 
+du -sk *|sort -nr
+
+V3 socket
+10.189.15.156
+9003
+
+10.0.242.82   uat
+pass Sbi@1234
+
+
+!grep "TELLER" $sql/incc.sql
+
+
+jso ani | awk '{print $6}'
+who -RT |grep ''
+
+TO PUT COMMIT
+cat insert_almc.sql |awk ' 1 ; NR%300 ==0  {printf"commit;\n"}  ' >> final_insert_almc.sql
+
+concatination
+
+>> to concate and append
+> to concate and remove existing
+
+acc lock
+select owner||'.'||object_name obj, oracle_username ||' ('||s.status||')' oruser , os_user_name osuser,l.process unix,''''||s.sid||','||s.serial#||'''' ss,r.name rs,to_char(s.logon_time,'yyyy/mm/dd hh24:mi:ss') time from v$locked_object l,dba_objects o,v$session s,v$transaction t,v$rollname r where l.object_id=o.object_id and s.sid=l.session_id and s.taddr=t.addr and t.xidusn=r.usn order by osuser ,ss,obj;
+
+to put commit in updation;
+
+cat (file name which to be processed --cltr_data.txt) |awk ' 1 ; NR%(no of line on which ---500)==0  {printf"commit;\n"}  ' >> (new file name----coll_n.sql)
+
+
+14255 - Principal (p)
+14258 - charges  (C)
+14257 - Arrer    (A)
+14256 - Interest (I)
+
+13230 ---- BASE TRAN
+13235 - Principal (p)
+13236 - charges  (C)
+13237 - Arrer    (A)
+13238 - Interest (I)
+
+GET DATA IN EXCEL
+
+=LEFT(A2,10)
+
+CONCATENATE("insert into bwmc values (","'000000",B2,"',","'",C2,"',","'",E2,"',","'",G2,"',",D2,",","(Select to_char(to_date('",F2,"','YYYYMMDD'),'J')-2415020 from dual),",0,",",0,",",0,",",D2,",","'1'",");")
+
+****** for commit
+cat bwmc05022024.sql |awk ' 1 ; NR%300 ==0  {printf"commit;\n"}  ' > final_insert_bwmc_05022024.sql
+
+select count(distinct(acc_no)) from bwmc;
+select count(acc_no) from almc;
+
+
+for table configuration
+export TWO_TASK=test_iardev  (sid)
+
+insert into almc (select ACC_NO,SYS,sum(TOTAL_AMOUNT),sum(AMT_RECOVERED),sum(AMT_WAIVED),sum(AMT_PENDING) from bwmc);
+
+begin insert into almc (select ACC_NO,SYS,sum(TOTAL_AMOUNT),sum(AMT_RECOVERED),sum(AMT_WAIVED),sum(AMT_PENDING) from bwmc  group by ACC_NO,SYS); exception when dup_val_on_index then update almc a set a.TOTAL_AMOUNT=sum(b.TOTAL_AMOUNT),a.AMT_RECOVERED=sum(b.AMT_RECOVERED),a.AMT_WAIVED=sum(b.AMT_WAIVED),a.AMT_PENDING=sum(b.AMT_PENDING) from bwmc b where a.ACC_NO=b.ACC_no group by b.ACC_NO,b.SYS); end;
+
+REPLACE 
+
+:%s/(from)/(to)/g
+
+:%s#(from)#(to)#g in one line
+
+
+cut -n (range)(1-10)
+
+TOUCH_FILES.card
+dt (cd $data/temp)
+df (cd $data/file)
+
+cmd file 
+
+cd Downloads
+
+sftp -oport=22 fnsonld3@10.189.15.154
+
+sftp -oport=2321 fnsonld3@10.176.15.51
+
+
+insert into uids values ('A11Y78B23561','CIF',0000003800387559,'DEP',69185,01,04114,43667,0000009504680852,0009991,0009991,'U','C',18102235,67000,' ');
+
+
+6171 error(Profile creation mandatory for this account before disbursement)
+insert into docm values('003','0000003800391761','LON','12','ddfgdfgdfg',70222,71317,'Y','0003','01');
+
+GSTN with checkdigit
+insert into gstn values ('95152432168','38000931437','Y','27APBPS1011B5ZD','27','20791003','4566874','4566874','0','Y');
+
+BULK ACC CREATION
+. bat              ---------------in src 
+lsrt *DEP*         ---------------to create account (DEP for ccod , LON for loans)
+cfpd0002           ---------------job run
+. blk              ---------------to bulk account making
+vim (file name)    ---------------which we get from .blk  
+
+
+to see ip of region
+netstat -in
+
+
+SELECT KEY_1,baseconv.convdata(od_visa_area , 200 , 8 , 5) as "od_dr_int_avail",baseconv.convdata(od_visa_area , 208 , 8 , 5) as "od_dr_int_incr",substr(od_visa_area , 98 , 1) as "lim_rate_type (1)",baseconv.convdata(od_visa_area , 99 , 4) as "lim_rate(1)",baseconv.convdata(od_visa_area , 103 , 8) as "limit amount(1)",LENDING_STATUS,CURR_BAL,NEW_BAD_DEBT_IND,OLD_BAD_DEBT_IND from invm where  ;
+
+
+baseconv.convdata(od_visa_area , 208 , 8 , 5)
+update invm set od_visa_area = substr(OD_VISA_AREA,1,207)||BASECONV.NUM2COMP(205.82, 8 )||substr(OD_VISA_AREA,216) where key_1 = '0030000004000335073';
+
+UPDATE OD EXPIRY DATE
+update invm set od_visa_area = substr(OD_VISA_AREA,1,4)||BASECONV.NUM2COMP(70430,4)||substr(OD_VISA_AREA,9)where key_1 = '0030000003800000012';
+
+UPDATE OD EFFECTIVE DATE
+select key_1,baseconv.convdata(od_visa_area , 1 , 4) as "EFFECTIVE DATE" from invm where key_1='0030000003800004260';
+update invm set od_visa_area = BASECONV.NUM2COMP(70430,4)||substr(OD_VISA_AREA,5)where key_1 = '0030000003800004260';
+
+UPDATE OD LIMIT DATE 
+select key_1,baseconv.convdata(od_visa_area , 99 , 4) as "lim_rate" from invm where key_1='0030000003800004260';
+update invm set od_visa_area = substr(OD_VISA_AREA,1,98)||BASECONV.NUM2COMP(70430,4)||substr(OD_VISA_AREA,9)where key_1 = '0030000003800000012';
+
+INT_ACCR -> baseconv.convdata(od_visa_area,200,8,5) -> Daily Accural of Normal and Commitment Interest
+UNPD_OD_DR_INT -> Monthly Accural (ccod)
+OD_PNLTY_INT_ACCR  -> Daily Accural of Penal Interest  (ccod)
+unpd_od_pnlty_int  -> Monthly Penal Accural (ccod)
+
+Update 100 in INT_ACCR 
+update invm set od_visa_area = substr(OD_VISA_AREA,1,199)||BASECONV.NUM2COMP(10000000,8)||substr(OD_VISA_AREA,208) where key_1 = '0030000003800072456'; 
+
+select * from (select * from bwmc where ACC_NO='0000003800074438' and status = '1' order by CHG_REC_DT asc,CHG_REC_TIME asc) where rownum = 1;
+
+EOD
+LON  -->  lond0501_??? - BR0501 - if dccar genetared - dcbr0800 - DC0800
+CCOD -->  depd0800_??? - IN0800 - if dccar genetared - dcin0800 - DC0800
+
+region date date change
+cfpd0121
+cfpd0006
+cfpd3001
+cfpd3002
+cfpd3004
+cfpd3006
+killstart
+
+to set date month
+UT1020
+
+cfpd0121------
+N
+N
+enter new date
+Y
+99
+
+to get DB ip
+select * from  v$instance;
+
+
+to get ip 
+tnsping (hostname)
+
+for region ip : hostname      tnsping UATDEV1
+for DB-ip     : sid           tnsping test_iardev ->()
+
+ip:- 10.176.15.51
+
+IFSC CODE
+HDFC0000001
+
+
+lsnrctl status
+
+insert into rtbi values ('003','23012024','235959','235959','235959','W');
+
+:set showmode
+
+/usr/local/bin/vim
+
+touch -amt YYMMDDHHMM (filename)
+
+select to_char(to_date(20231027,'YYYYMMDD'),'J')-2415020 "BINARY DATE" from dual;
+
+SELECT TO_CHAR(CURRENT_DATE, 'YYYYMMDD') FROM DUAL;
+select to_char(to_date(20231027,'YYYYMMDD'),'J')-2415020 "BINARY DATE" from dual;
+
+(SELECT TO_CHAR(CURRENT_DATE, 'YYYYMMDD') FROM DUAL)
+select to_char(to_date((SELECT TO_CHAR(CURRENT_DATE, 'YYYYMMDD') FROM DUAL),'YYYYMMDD'),'J')-2415020 "BINARY DATE" from dual;
+
+input length  982
+output length 983
+
+debug in 177 
+
+193i
+ssh fnsonli@10.189.14.193
+193id
+ssh fnsonlid@10.189.14.193
+pass- password
+
+ssh fnsonlid@10.189.14.177 (day)
+ssh fnsonli@10.189.14.177   (control)
+pass- Aug@2023
+
+
+ssh fnsonli@10.189.14.194
+ssh fnsonlid@10.189.14.194
+pass- password
+
+new D3 session
+ip       : 10.176.15.51
+port     : 2321
+username : fnsonld3
+password : Dec@2023
+
+select v$sql.sql_id,v$sql.sql_text,username from v$sql,v$session where username='FNSONLI' and v$sql.sql_id=v$session.sql_id;
+
+select sid,serial# from v$session where sid in ( select session_id from dba_dml_locks );
+
+select owner||'.'||object_name obj, oracle_username ||' ('||s.status||')' oruser , os_user_name osuser,l.process unix,''''||s.sid||','||s.serial#||'''' ss,r.name rs,to_char(s.logon_time,'yyyy/mm/dd hh24:mi:ss') time from v$locked_object l,dba_objects o,v$session s,v$transaction t,v$rollname r where l.object_id=o.object_id and s.sid=l.session_id and s.taddr=t.addr and t.xidusn=r.usn order by osuser ,ss,obj;
+
+alter system kill session '1307,36661';
+
+
+/oracle12c/app/oracle/product/12.1/network/admin
+
+193:
+/oracle_12c/app/oracle/product/12.2/network/admin
+
+
+create database link gautam_193 connect to gautam identified by password  using '(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.189.15.154)(PORT = 1540)))(CONNECT_DATA =(SID = IARDEV )))';
+
+##
+conn sys.password as sysdba
+
+ALTER SESSION FORCE PARALLEL QUERY PARALLEL 32;
+ALTER SESSION ENABLE PARALLEL QUERY;
+
+251i
+ssh monitoro@10.189.15.243
+
+
+10.176.15.51 database
+
+/fns/d3/r/data/params
+APPPARAM -----  for que
+
+select substr(baseconv.chartobits(fee_mask),117 ,1) from depp where TYPE||INT_CAT ='10111101';
+
+
+
+
+                      _________(if Data present like lim,rate(ODVISA)
+                     | 
+                     |
+                (convdata) 
+substr(baseconv.chartobits(fee_mask),117 ,1)
+|          |         |       |_____________________variable name 
+|          |         |
+|          |         |_____characters to bits 
+|          |         
+|          |____to convert compressed field  
+|
+|____substring
+
+TO GET FILES IN SPOOL
+set head off;
+set lines 1234;
+set pages 1000;
+set colsep',';
+spool (fiLE NAME).txt
+**********************
+
+to zip file
+gzip   (filename)  -- to compress
+gunzip (filename)/gzip -d (filename) -- to unzip
+
+d3 connectivity
+sftp -oport=2321 fnsonld3@10.176.15.51
+
+v3 connectivity
+sftp -oport=2321 fnsonlv3@10.176.15.52
+
+select * from dba_services;
+select * from v$instance;
+select STATUS,INSTANCE_NAME,HOST_NAME,DATABASE_STATUS,DATABASE_TYPE  from v$instance;
+
+/oracle_19c/app/oracle/product/19.3/dbs
+
+10.0.13.108
+1521
+
+SR-C11-U
+test_iardev
+6087
+10.176.15.54
+
+
+INSERT INTO ED3P VALUES ( 99922,1045,'INB','POSTING_RESTRICTIONS_BYPASS',285,'Y','INV','+','2','+','5','+','3','+','3','+','3','+','1','+','6','+','1',' ',' ',0,' ',' ',' ',' ',0,' ',0);
+
+
+bancs.kill_emergency   DC
+jso rts                DC
+kill  (animators)      D
+izap;izap;izap;        D
+cfpd0006               C
+cfpd0080               C
+cfpd0007               C
+cfpd0006               D
+cfpd0080               D
+cfpd0007               D
+cfpd0004               D
+jso SY                 (3 running jobs in D)(1 running job in in C)
+startgateway           C 
+
+cfpd3001               D      (our region)
+cfpd3002               D      (our region)
+cfpd3004               D
+cfpd3006               D
+
+
+
+for SORTED FILE
+depd0900ms
+depd0580a
+
+
+193id
+pass- password
+
+ssh fnsonlid@10.189.14.177  (day)
+ssh fnsonli@10.189.14.177   (control)
+pass- Eom@2022
+
+
+OUR REGION
+
+bancs.kill
+jso rts                
+kill -9 (animators)      
+izap;izap;izap;        
+cfpd0006               
+cfpd0080            
+cfpd0007                             
+cfpd0004              
+jso SY                         
+bnup              
+
+
+region date date change
+
+cfpd0121;
+cfpd0006;
+cfpd3001;
+cfpd3002;
+cfpd3004;
+cfpd3006;
+killstart
+
+bnup
+
+bncons < $HOME/.bnconsinput
+
+$HOME/.bnconsinput
+
+cfpd0121------
+N
+N
+enter new date
+Y
+99
+
+95038526761 cust
+64401011
+
+38003873313   loan acct
+
+select key_1,STAT from borm where key_1='0030000003800387331';
+
+38000020571
+38003875559 ccod acc
+
+NORMAL
+select a.key_1,a.ACCT_TYPE||a.INT_CAT,b.TYPE||b.INT_CAT,b.ACCT_DESC,b.OD_INDICATOR,b.P_SEG_FLAG from invm a,depp b where b.ACCT_DESC='S' and b.OD_INDICATOR='N' and rownum < 10;
+
+
+SBOD
+select a.key_1,a.ACCT_TYPE||a.INT_CAT,b.TYPE||b.INT_CAT,b.ACCT_DESC,b.OD_INDICATOR,b.P_SEG_FLAG from invm a,depp b where b.ACCT_DESC='S' and b.OD_INDICATOR='Y' and rownum < 10;
+
+CAOD CASE 1
+select a.key_1,a.ACCT_TYPE||a.INT_CAT,b.TYPE||b.INT_CAT,b.ACCT_DESC,b.OD_INDICATOR,b.P_SEG_FLAG from invm a,depp b where b.ACCT_DESC='Q' and b.OD_INDICATOR='Y' and  a.ACCT_TYPE < 6000 and rownum < 10;
+
+CAOD CASE 2
+select a.key_1,a.ACCT_TYPE||a.INT_CAT,b.TYPE||b.INT_CAT,b.ACCT_DESC,b.OD_INDICATOR,b.P_SEG_FLAG from invm a,depp b where b.ACCT_DESC='Q' and b.OD_INDICATOR='Y' and  a.ACCT_TYPE > 5999 and b.P_SEG_FLAG ='Y' and rownum < 10;
+
+
+CCOD
+select a.key_1,a.ACCT_TYPE||a.INT_CAT,b.TYPE||b.INT_CAT,b.ACCT_DESC,b.OD_INDICATOR,b.P_SEG_FLAG from invm a,depp b where b.ACCT_DESC='Q' and b.OD_INDICATOR='Y' and  a.ACCT_TYPE > 5999  and rownum < 10;
+
+
+TDRV
+select a.key_1,a.ACCT_TYPE||a.INT_CAT,b.TYPE||b.INT_CAT,b.ACCT_DESC,b.OD_INDICATOR,b.P_SEG_FLAG,b.INT_LINK_TO_DEP from invm a,depp b where b.INT_LINK_TO_DEP ='Y' and rownum < 10;
+
+
+SQL> select to_char(to_date((SELECT TO_CHAR(CURRENT_DATE, 'YYYYMMDD') FROM DUAL),'YYYYMMDD'),'J')-2415020 "BINARY DATE" from dual;
+
+BINARY DATE
+-----------
+      45225
+
+
+Dear Sir/Madam,
+
+Done. Use below script/Scripts.
+
+/usr/local/bin/rsync -avzx --rsync-path=/usr/local/bin/rsync --stats /fns/v3/r/data/  fnsonld3@10.176.15.51:/fns/d3/r/data/.
+/usr/local/bin/rsync -avzx --rsync-path=/usr/local/bin/rsync --stats /fns/v3/r/dbora/  fnsonld3@10.176.15.51:/fns/d3/r/dbora/.
+/usr/local/bin/rsync -avzx --rsync-path=/usr/local/bin/rsync --stats /fns/v3/r/src/  fnsonld3@10.176.15.51:/fns/d3/r/src/.
+/usr/local/bin/rsync -avzx --rsync-path=/usr/local/bin/rsync --stats /fns/v3/r/sql/  fnsonld3@10.176.15.51:/fns/d3/r/sql/.
+/usr/local/bin/rsync -avzx --rsync-path=/usr/local/bin/rsync --stats /fns/v3/r/exe/  fnsonld3@10.176.15.51:/fns/d3/r/exe/.
+/usr/local/bin/rsync -avzx --rsync-path=/usr/local/bin/rsync --stats /fns/v3/r/int/  fnsonld3@10.176.15.51:/fns/d3/r/int/.
+/usr/local/bin/rsync -avzx --rsync-path=/usr/local/bin/rsync --stats /fns/v3/r/idy/  fnsonld3@10.176.15.51:/fns/d3/r/idy/.
+
+
+Check in cd $int path and dbora/int path for this link if absent then execute following commands.
+
+
+To check whether link is created for accessing copybook 
+
+ls -lrt  | grep "^l"
+
+If link is not created for copybook then create link using below commands(Put your region copybook path)
+
+ln -s /fns/d3/r/src/LIBRYATM LIBRYATM
+ln -s /fns/d3/r/src/LIBRYBOR LIBRYBOR
+ln -s /fns/d3/r/src/LIBRYBRO LIBRYBRO
+ln -s /fns/d3/r/src/LIBRYCHG LIBRYCHG
+ln -s /fns/d3/r/src/LIBRYCTA LIBRYCTA
+ln -s /fns/d3/r/src/LIBRYDCS LIBRYDCS
+ln -s /fns/d3/r/src/LIBRYEXC LIBRYEXC
+ln -s /fns/d3/r/src/LIBRYEXR LIBRYEXR
+ln -s /fns/d3/r/src/LIBRYGEN LIBRYGEN
+ln -s /fns/d3/r/src/LIBRYINV LIBRYINV
+ln -s /fns/d3/r/src/LIBRYMIS LIBRYMIS
+ln -s /fns/d3/r/src/LIBRYRPT LIBRYRPT
+ln -s /fns/d3/r/src/LIBRYSPY LIBRYSPY
+ln -s /fns/d3/r/src/LIBRYSWI LIBRYSWI
+ln -s /fns/d3/r/src/LIBRYTRE LIBRYTRE
+ln -s /fns/d3/r/src/LIBRYUNX LIBRYUNX
+ln -s /fns/d3/r/src/LIBSYNC  LIBSYNC
+
+If replace or change path use below commands(Put your region copybook path)
+
+ln -sf /fns/d3/r/src/LIBRYATM LIBRYATM
+ln -sf /fns/d3/r/src/LIBRYBOR LIBRYBOR
+ln -sf /fns/d3/r/src/LIBRYBRO LIBRYBRO
+ln -sf /fns/d3/r/src/LIBRYCHG LIBRYCHG
+ln -sf /fns/d3/r/src/LIBRYCTA LIBRYCTA
+ln -sf /fns/d3/r/src/LIBRYDCS LIBRYDCS
+ln -sf /fns/d3/r/src/LIBRYEXC LIBRYEXC
+ln -sf /fns/d3/r/src/LIBRYEXR LIBRYEXR
+ln -sf /fns/d3/r/src/LIBRYGEN LIBRYGEN
+ln -sf /fns/d3/r/src/LIBRYINV LIBRYINV
+ln -sf /fns/d3/r/src/LIBRYMIS LIBRYMIS
+ln -sf /fns/d3/r/src/LIBRYRPT LIBRYRPT
+ln -sf /fns/d3/r/src/LIBRYSPY LIBRYSPY
+ln -sf /fns/d3/r/src/LIBRYSWI LIBRYSWI
+ln -sf /fns/d3/r/src/LIBRYTRE LIBRYTRE
+ln -sf /fns/d3/r/src/LIBRYUNX LIBRYUNX
+ln -sf /fns/d3/r/src/LIBSYNC  LIBSYNC
+ln -sf /fns/d3/r/src/LIBRYPRI LIBRYPRI
+
+
+Steps for setting visual cobol Region 
+
+1. Environment configuration for Visual Cobol: Make following entry in .profile of the user
+Comment COBDIR,SHLIB_PATH,LD_LIBRARY_PATH for earlier version and add following statements to .profile
+export COBDIR=/opt/microfocus/VisualCOBOL
+export PATH=$COBDIR/bin:$PATH
+export LD_LIBRARY_PATH=$COBDIR/lib:$LD_LIBRARY_PATH:/usr/lib
+export SHLIB_PATH=/opt/microfocus/VisualCOBOL/lib:$ORACLE_HOME/lib
+
+2. Cobol Code change for the Visual Cobol compatibility.
+a. Replace "putenv" with "cobputenv" in all $src/*.COB programs.
+
+you can run following command in $src directory for the above conversion:
+
+perl -pi -e 's/putenv/cobputenv/g' *.COB
+
+b. Re-compile all COB and PCO using Visual Cobol.
+
+Bulk compile
+cd $HOME/mover
+cd $src
+ls *.COB > $HOME/mover/coblist_19052023.txt
+cd $dbsrc/pco
+ls *.PCO > $HOME/mover/pcolist_19052023.txt
+cd $HOME/mover
+cd $src 
+cp -f /fns/d3/r/dbora/cob/DBIODIST.COB . 
+cp -f /fns/d3/r/dbora/cob/DBIOPART.COB . 
+cp -f /fns/d3/r/dbora/cob/DBIOFULL.COB . 
+cp -f /fns/d3/r/dbora/cob/DBIOREL.COB .
+cp -f /fns/d3/r/dbora/cob/DBIORELP.COB .
+cd $HOME/mover
+compilecob DBIODIST.COB DBIOPART.COB DBIOFULL.COB DBIOREL.COB DBIORELP.COB
+compilepco IOMISC.PCO EXIMDB.PCO
+bulkcompile.pl debug=1 coblist=coblist_19052023.txt
+bulkcompile.pl debug=1 errlevel=error coblist=pcolist_19052023.txt
+
+INSERT INTO ED3P VALUES ( 99922,1045,'INB','POSTING_RESTRICTIONS_BYPASS',285,'Y','INV','+','2','+','5','+','3','+','3','+','3','+','1','+','6','+','1',' ',' ',0,' ',' ',' ',' ',0,' ',0);
+
+
+select key_1,BASECONV.CONVDATA(arr_data_01,32,4) as "TRIGGER DATE" from rgst where key_1='003DEP0000003800391724';
+
+to get todays date
+select to_char(to_date((SELECT TO_CHAR(CURRENT_DATE, 'YYYYMMDD') FROM DUAL),'YYYYMMDD'),'J')-2415020 "BINARY DATE" from dual;
+
+remove control characters (^M) :-  removecr filename
+
+
+”Whatever happened was good. What’s happening is going well. Whatever will happen will also be good. Do not worry about the future. Live in the present.” – Lord Krishna 
+
+COLORS
+red="\033[01;31m"
+yellow="\033[01;33m"
+pink="\033[01;35m"
+green="\033[01;32m"
+blue="\033[01;36m"
+normal="\033[0;37m"
+orange="\033[1;93m"
+blue dark="\033[34m"
+black="\033[30m"
+pink="\033[35m"
+"\033[01;32m"  
+       |______________00 bold   04 underline 02 normal  01 brighter   
+	   
+------------------------------------------------------------------------------------	   
+Create a ccod account
+
+desc mcif;
+
+
+ 
+select SOC_NO,MASTER_CIF,STATUS,CREATE_DATE from mcif where CREATE_DATE ='72928';
+
+62000   enter customer no
+
+2013 fill data
+
+2009 for limit creation
+
+2015  additional details for ccod
+   data to fill ----------   activity code
+							scheme code
+							Credit Guarantee Scheme Flag
+							Customer Type
+							Purpose Code	
+2420
+insert into uids values ('A11Y78B23561','CIF',0000003800387559,'DEP',69185,01,04114,43667,0000009504680852,0009991,0009991,'U','C',18102235,67000,' ');
+
+6171 error(Profile creation mandatory for this account before disbursement)
+insert into docm values('003','0000003800391546','LON','12','ddfgdfgdfg',70222,71317,'Y','0003','01');
+
+62504001        lonp repay schedule type 2
+------------------------------------------------------------------------------------	
+
+1	Immovable Properties	
+2	Lease hold Rights	    
+7	Plant and Machineries	
+
+
+CSKM 03
+CSKV 03 
+SHRM 14
+SHRV 14
+SSCV 14
+TDRM 12
+TDRV 12
+CGDM 05
+CGDV 05
+PBSM 15
+PBSV 15
+
+COLM  all types
+BORM  all types
+INVM  all types
+INCC  all types        
+
+
+31200- global trancodes  ------ 31182 (ED2P)
+
+
+************ Steps to change region(night to day or day to night) mode without bncons *************************
+
+1) kill day, night and control regions by using "bancs.kill_emergency".
+2)cfpd0006 - run on both control and (night or day as per our requirement).
+3) use below queries to update "sysc" table as per our requirement in control region.
+4) Clear share memory of all region - "ipcs.zap -qms $LOGNAME" .
+5) Bring up control region using - "cfpd0080;cfpd00007" and day/night using "cfpd0080;cfpd0007;cfpd0004"
+
+
+cardfile  SCB.card
+
+------> Queries:
+To set day use below query:
+update sysc set SYSC_VARIABLE=substr(SYSC_VARIABLE,1,10)||'D'||substr(SYSC_VARIABLE,12) where SYSTEM_NO='00';
+
+To set night use below query:
+update sysc set SYSC_VARIABLE=substr(SYSC_VARIABLE,1,10)||'N'||substr(SYSC_VARIABLE,12) where SYSTEM_NO='00';
+
+To verify after changing below query: 
+select substr(SYSC_VARIABLE,11,1) from sysc where SYSTEM_NO='00';
+Night Enable / Not Night Enable
+
+ED1P:       0-Not Night Enable
+            1-Night Enable
+ED2P :      0- Not Night Enable
+            1-Night Enable + Reposting 
+            2-Night Enable
+
+Sec_access_ind :0 - - home branch tx and non-home branch tx are allowed
+               :2 - - home branch allowed non home branch is not allowed  no
+               :3--home branch both Cr and dr allowed and for non home branch debit allowed non-home branch credit is not allowed
+               :4–home branch both Cr and dr allowed and for non home branch credit allowed debit is not allowed.
+			   
+**************************************************************************************************************
+
+getUserDetails
+/ftparea/st/d3  /opt/TouchBase/config/officedbdev.txt   reports
+
+/home/scripts
+
+
+Dear All,
+
+As some of you may know, today is my last working day here at TCS. I wanted to take a moment to express my heartfelt gratitude for the ingredible support, collaboration and camaraderie we have shared over the past 2 years.
+
+I would also like to extend a special thanks 🙏 t(though not in TCS at present) for their guidance and support throughout my time here.
+
+Working with you all was an amazing journey and I am grateful for the opportunities and memories we have created together. Though I am excited about my next chapter, i will miss being a part of this wonderful team.
+
+Let's stay connected! You can reach me at  .
+
+Wishing you all continued success and happiness😊
+
+*********************
+
+badgotos.pl -basedir /fns/d0/r/dbora/pco/         -reportdir /fns/d0/r/sysout/PZ_badgoto        -prog /fns/d0/r/dbora/pco/NERTIO.PCO
+checkVarInit.pl -if /fns/d0/r/dbora/pco/NERTIO.PCO -of /fns/d0/r/sysout/PZ_INIT/NERTIO.TXT -ir 24070041
+ConditionsCheck.pl -if /fns/d0/r/dbora/pco/NERTIO.PCO -of /fns/d0/r/sysout/PZ_IF/NERTIO.TXT -ir 24070041
+filehandlechk.pl -if /fns/d0/r/dbora/pco/NERTIO.PCO -of /fns/d0/r/sysout/PZ_file/NERTIO.TXT -ir 24070041
+checkPara.pl -if /fns/d0/r/dbora/pco/NERTIO.PCO -of /fns/d0/r/sysout/PZ_PARA/NERTIO.TXT -irno 24070041
+evalWhenOtherCheck.pl -if /fns/d0/r/dbora/pco/NERTIO.PCO -irno 24070041
+chkVarMove.pl -if /fns/d0/r/src/IF3561.COB    -of /fns/d0/r/sysout/PZ_VRMV/IF3561.TXT -ir 24080074
+checkCallParam.pl -if /fns/d0/r/dbora/pco/NERTIO.PCO -of /fns/d0/r/sysout/CALL_PZ/NERTIO.TXT -ir 24070041
+
+
+badgotos.pl -basedir /fns/d3/r/dbora/pco/UTRARL.PCO  -reportdir /fns/d3/r/sysout/PZ_badgoto     -prog  /fns/d3/r/dbora/pco/UTRARL.PCO
+
+checkVarInit.pl -if /fns/d3/r/dbora/pco/UTRARL.PCO -of /fns/d3/r/sysout/PZ_INIT/UTRARL.TXT 
+
+
+
+sqlcodes 
+-917  Bind package failed
+-905  Maximum open cursors exceeded
+-811  returns more than one row
+-803  Unique constraint violation
+-802  Divisor equal to zero
+-722  Package does not exist
+-612  Duplicate column name
+-604  Creating a CHAR column with length of max+1
+-601  Name is already used by an existing object
+-553  User does not exist
+-551  Insufficient privilege
+-532  Child not found (delete)
+-531  Child not found (insert/update)
+-530  Parent not found (insert/update/delete)
+-508  Specified row no longer exists
+-501  Fetch out of sequence
+-440  Not a valid function or procedure name
+-426  COMMIT is not allowed in subordinate session
+-423  Invalid LOB locator specified
+-421  Operands of a set operator do not have the same number of columns
+-413  Value larger than specified precision 
+-408  Invalid number
+-407  Cannot insert NULL into column
+-404  Value too large for column
+-399  Invalid ROWID
+-313  Illegal variable 
+-302  Invalid nibble or byte in the input data
+-253  array insert or merge reported some errors
+-206  Invalid identifier
+-204  Table or view does not exist/ Object not found/Invalid identifier
+-203  Ambiguous column usage
+-199  Misspelled keyword
+-182  Date + date not allowed
+-181  date issue
+-180  Literal does not match format string
+-170  Incorrect number of arguments
+-158  CREATE VIEW with ambiguous number of columns
+-130  illegal character following the escape
+-122  Not a GROUP BY 
+-120  Group function not allowed
+-117  Too many values
+-107  Identifier is too long
+-104  missing parentheiss / null / keywords 
+-84   Invalid SQL statement / others
+100   No data found
+-104 or -199  invalid statement / tablename / option / column / character
+
+
