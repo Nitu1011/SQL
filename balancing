@@ -1,0 +1,119 @@
+DB_QUERY()
+{
+ queryresult=`sqlplus -s \/ << EOF
+ set feedback off;
+ set head off;
+ set pages 0;
+ alter session force parallel ddl ;
+ set timing on ;
+ $@;
+ set timing off ;
+ show sqlcode ;
+ commit;
+ exit;
+ EOF`
+ export sqlcode=`echo "$queryresult" | grep sqlcode|awk '{print $2}' | sed 's/[ ]\{1,\}//`
+ export time_elaps=`echo "$queryresult" | grep -i 'Elapsed' | awk '{print $2}'`
+ export queryresult=`echo "$queryresult" | grep -v sqlcode | grep -v 'Elapsed:'  | awk '{print $1}'`
+}
+echo " ENTER NO OF STREAMS "
+read no_of_str
+no_of_streams=`expr $no_of_str - 1 `
+tab_count=`sqlplus -s / << EOF
+set head off;
+set feedback off;
+select /*+ parallel(a,128) */  count(*) from CSCL a;
+exit;
+EOF`
+rm $spool/range_pre.txt
+rm $spool/range_final.log
+rm $spool/range_final.txt
+rm $spool/CSCL.card
+rm -f $spool/range_lastfinalp.txt
+tab_count=`echo $tab_count | tr -d '\t'`
+stream_width=`expr $tab_count \/ $no_of_streams`
+echo "sqlplus -s / << EOP" >> $spool/range_pre.txt
+echo "set head off;" >>$spool/range_pre.txt
+echo "set feedback off;" >> $spool/range_pre.txt
+echo "set pages 0" >>$spool/range_pre.txt
+echo "spool range_final.log" >>$spool/range_pre.txt
+echo "select ACCOUNT_NO,rnum from ( select /*+ parallel(CSCL,128) */ ACCOUNT_NO, row_number() over ( order by ACCOUNT_NO) rnum from CSCL ) where rnum in (1,">>$spool/range_pre.txt
+i=1
+while [ $i -le $no_of_streams ]
+do
+value=`expr $stream_width \* $i`
+if [ $i -eq $no_of_streams ]; then
+echo "$tab_count"");" >>$spool/range_pre.txt
+else
+echo "$value""," >>$spool/range_pre.txt
+fi
+i=`expr $i + 1`
+done
+echo "spool off">>$spool/range_pre.txt
+echo "exit;" >> $spool/range_pre.txt
+echo "EOP">>$spool/range_pre.txt
+chmod 777 $spool/range_pre.txt
+cd $spool
+ksh  $spool/range_pre.txt
+cd ..
+chmod 777 $spool/range_final.log
+cat $spool/range_final.log | awk '{print $1}'|sort | uniq > $spool/range_final.txt
+cat $spool/range_final.txt|while read line
+do
+  if [ $line -ne '1' ];then
+   echo $line >> $spool/range_lastfinalp.txt
+  fi
+done
+echo "done for sorting"
+no_of_ranges=`sed '/^$/d' $spool/range_lastfinalp.txt | wc -l`
+STR0='SPEC$'
+STR='SPEC$STREAM'
+STR2='SPEC$CHGGL'
+from_range='0000000000000001'
+to_range='0000009999999999'
+echo "      $STR0     $from_range $to_range"                    >>  $spool/CSCL.card
+echo "      $STR Y $no_of_ranges"                               >>  $spool/CSCL.card
+echo "      *           - --            "                       >>  $spool/CSCL.card
+echo "      *           |  |_ no. of streams to be generated"   >>  $spool/CSCL.card
+echo "      *           |       valid number:2 to 99 "          >>  $spool/CSCL.card
+echo "      *           |                            "          >>  $spool/CSCL.card
+echo "      *           |____                        "          >>  $spool/CSCL.card
+echo "      *                                        "          >>  $spool/CSCL.card
+i=1
+cat $spool/range_lastfinalp.txt |while read line
+do
+rang[$i]=`echo $line | awk '{print $1}'`
+i=`expr $i + 1`
+done
+no_of_rang=`expr $no_of_ranges - 1`
+j=1
+typeset -RZ16 to_range
+typeset -RZ16 from_range
+typeset -RZ3 j
+if [ $no_of_rang -eq 0 ];then
+echo ${rang[$j]} ${rang[$j]} >> $spool/CSCL.card
+else
+while [ $j -le $no_of_ranges ]
+do
+if [ $j -eq $no_of_ranges ]; then
+to_range='9999999999'
+else
+to_range=`bc << quit
+${rang[$j+1]} - 1
+quit`
+fi
+echo ${rang[$j+1]}
+if [ $j -eq 1 ]; then
+from_range='0000000001'
+else
+from_range=${rang[$j]}
+fi
+echo "      $STR2$j $from_range $to_range" >> $spool/CSCL.card
+j=`expr $j + 1`
+done
+fi
+#------- BACKUP OF OLD CARDFILE -----------------
+d=`date '+%Y%m%d'`
+cp -f $card/CS0100MS.card $card/CS0100MS.card_$d
+#------------------------------------------------
+cp -f $spool/CSCL.card $spool/CS0100MS.card
