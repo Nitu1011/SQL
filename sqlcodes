@@ -1,0 +1,140 @@
+sqlcodes
+-917  Bind package failed
+-905  Maximum open cursors exceeded
+-811  returns more than one row
+-803  Unique constraint violation
+-802  Divisor equal to zero
+-722  Package does not exist
+-612  Duplicate column name
+-604  Creating aB CHARB column with length ofB max+1
+-601  Name is already used by an existing object
+-553  User does not exist
+-551  Insufficient privilege
+-532  Child not found (delete)
+-531  Child not found (insert/update)
+-530  Parent not found (insert/update/delete)
+-508  Specified row no longer exists
+-501  Fetch out of sequence
+-440  Not a valid function or procedure name
+-426  COMMITB is not allowed in subordinate session
+-423  Invalid LOB locator specified
+-421  Operands of a set operator do not have the same number of columns
+-413  Value larger than specified precision
+-408  Invalid number
+-407  Cannot insertB NULLB into column
+-404  Value too large for column
+-399  InvalidB ROWID
+-313  Illegal variable
+-302  InvalidB nibbleB orB byteB in the input data
+-253  array insert or merge reported some errors
+-206  Invalid identifier
+-204  Table or view does not exist/ Object not found/Invalid identifier
+-203  Ambiguous column usage
+-199  Misspelled keyword
+-182  Date + date not allowed
+-181  date issue
+-180  Literal does not match format string
+-170  Incorrect number of arguments
+-158  CREATE VIEWB with ambiguous number of columns
+-130  illegal character following the escape
+-122  Not aB GROUPB BYB
+-120  Group function not allowed
+-117  Too many values
+-107  Identifier is too long
+-104  missing parentheiss / null / keywords
+-84   Invalid SQL statement / others
+100   No data found
+-104 or -199  invalid statement / tablename / option / column / character
+
+
+ORA-00001  Unique constraint violation
+ORA-00900  Invalid SQL statement
+ORA-00900  Invalid SQL statement
+ORA-00901  InvalidB CREATEB command
+ORA-00902  Invalid datatype
+ORA-00903  Invalid table name
+ORA-00904  Invalid identifier
+ORA-00904  Invalid identifier
+ORA-00905  Misspelled keyword
+ORA-00906  Missing left parenthesis
+ORA-00907  Missing right parenthesis
+ORA-00908  MissingB NULL
+ORA-00909  Incorrect number of arguments
+ORA-00910  Creating aB CHARB column with length ofB max+1
+ORA-00911  Invalid character
+ORA-00913  Too many values
+ORA-00917  Missing coma
+ORA-00918  Ambiguous column usage
+ORA-00920  Invalid relational operator
+ORA-00922  Invalid or missing option
+ORA-00923  FROMB keyword not found where expected
+ORA-00925  MissingB INTOB keyword
+ORA-00926  MissingB VALUESB keyword
+ORA-00927  Missing = sign
+ORA-00928  MissingB SELECTB keyword
+ORA-00932  Value not compatible with target column type
+ORA-00933  SQL command not properly ended
+ORA-00934  Group function not allowed
+ORA-00936  Missing expression
+ORA-00937  Not a single group function
+ORA-00942  Table or view does not exist
+ORA-00947  Not enough values
+ORA-00950  InvalidB DROPB option
+ORA-00955  Name is already used by an existing object
+ORA-00957  Duplicate column name
+ORA-00960  Ambiguous column naming in select list
+ORA-00969  MissingB ONB keyword
+ORA-00971  MissingB SETB keyword
+ORA-00972  Identifier is too long
+ORA-00975  Date + date not allowed
+ORA-00979  Not aB GROUPB BYB expression
+ORA-00999  Invalid view name
+ORA-01000  Maximum open cursors exceeded
+ORA-01002  Fetch out of sequence
+ORA-01008  Not all variables bound
+ORA-01031  Insufficient privilege to perform operation on object
+ORA-01036  Illegal variable name/number
+ORA-01400  Cannot insertB NULLB into column
+ORA-01403  No data found
+ORA-01410  InvalidB ROWID
+ORA-01422  Exact fetch returns more than requested number of rows
+ORA-01424  Missing or illegal character following the escape character
+ORA-01425  Escape character must be string of lengthB 1
+ORA-01427  Single-row subquery returns more than one row
+ORA-01435  User does not exist
+ORA-01438  Value larger than specified precision allowed for this column
+ORA-01455  Converting column overflowsB INTEGERB datatype
+ORA-01476  Divisor equal to zero
+ORA-01488  InvalidB nibbleB orB byteB in the input data
+ORA-01722  Invalid number
+ORA-01730  CREATE VIEWB with ambiguous number of columns
+ORA-01745  Invalid host/bind variable name
+ORA-01747  Invalid table or column specification
+ORA-01756  Missing quote for quoted string
+ORA-01789  Operands of a set operator do not have the same number of columns
+ORA-01830  Date format picture ends before converting entire input string
+ORA-01841  (Full) year must be betweenB -4713B andB +9999, and notB 0
+ORA-01843  Bad month
+ORA-01847  Bad year
+ORA-01858  not numeric where numeric expected in date
+ORA-01861  Literal does not match format string
+ORA-02089  COMMITB is not allowed in subordinate session
+ORA-02291  Parent not found (insert/update/delete)
+ORA-02292  Child not found (insert/update)
+ORA-02292  Child not found (delete)
+ORA-04043  Object not found
+ORA-04063  Package body has errors
+ORA-06550  Reports various PL/SQL errors, such as:
+PLS00201   identifier must be declared
+PLS-00904  insufficient privilege to access object
+ORA-06576  Not a valid function or procedure name
+ORA-08006  Specified row no longer exists
+ORA-12899  Value too large for column
+ORA-20980  User does not have package privilege for operation
+ORA-20981  Bind package failed
+ORA-20982  User does not have package privilege for operation
+ORA-20983  Package does not exist
+ORA-22275  Invalid LOB locator specified
+ORA-24333  Misspelled SQL statement
+ORA-24381  array insert or merge reported some errors
+
