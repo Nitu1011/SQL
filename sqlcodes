@@ -90,6 +90,7 @@ ORA-00975  Date + date not allowed
 ORA-00979  Not aB GROUPB BYB expression
 ORA-00999  Invalid view name
 ORA-01000  Maximum open cursors exceeded
+ORA-01001: invalid cursor
 ORA-01002  Fetch out of sequence
 ORA-01008  Not all variables bound
 ORA-01031  Insufficient privilege to perform operation on object
