@@ -125,9 +125,10 @@ ORA-02292  Child not found (delete)
 ORA-04043  Object not found
 ORA-04063  Package body has errors
 ORA-06550  Reports various PL/SQL errors, such as:
-PLS00201   identifier must be declared
+PLS-00201  identifier must be declared
 PLS-00904  insufficient privilege to access object
 ORA-06576  Not a valid function or procedure name
+ORA-06532  Subscript outside of limit
 ORA-08006  Specified row no longer exists
 ORA-12899  Value too large for column
 ORA-20980  User does not have package privilege for operation
