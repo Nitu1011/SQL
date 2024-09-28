@@ -1,20 +1,20 @@
 declare
-      type rec1 is record 
+      type rec1 is record        -- declare record
       ( wa_name       customers.name%type);
       
-      type arr1 is VARRAY (10) of rec1;
+      type arr1 is VARRAY (10) of rec1;   -- declare array with array size
       
-      temp1 arr1 := arr1();   
+      temp1 arr1 := arr1();     -- initialize array 
       
-      cursor cur1 is
+      cursor cur1 is         -- declare cursor
       select name from customers order by CUSTOMER_ID fetch first 10 rows only;
 begin
-for rec2 in cur1 loop
+for rec2 in cur1 loop           -- fetch cursor and load array using extend
    temp1.EXTEND;
    temp1(temp1.LAST).wa_name    := rec2.NAME;
 end loop;
 
-for idx in temp1.FIRST..temp1.LAST
+for idx in temp1.FIRST..temp1.LAST    -- loop array to display output
 loop
    dbms_output.put_line ('NAME of employee is ' || temp1(idx).wa_name);
 end loop;
